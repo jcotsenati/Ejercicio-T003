@@ -26,15 +26,15 @@ namespace Ejercicio_T003
             {
                 if (txtContrasenia.Text != "Password")
                 {
-                    //UserModel user = new UserModel();
-                    //var validLogin = user.LoginUser(txtuser.Text, txtpass.Text);
-                    var validLogin = true;
+                    UserModel user = new UserModel();
+                    var validLogin = user.LoginUser(txtUsuario.Text, txtContrasenia.Text);
+                    //var validLogin = true;
                     if (validLogin == true)
                     {
                         FormMenuPrincipal mainMenu = new FormMenuPrincipal();
-                        //MessageBox.Show("Bienvenido " + UserCache.FirstName + "," + UserCache.LastName);
+                        MessageBox.Show("Bienvenido " + UserCache.FirstName + "," + UserCache.LastName);
                         mainMenu.Show();
-                        //mainMenu.FormClosed += Logout;
+                        mainMenu.FormClosed += Logout;//Eventos
                         this.Hide();
                     }
                     else

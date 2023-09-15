@@ -19,12 +19,23 @@ namespace Ejercicio_T003
 
         private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+        }
+        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+        }
+        private void LoadUserData()
+        {
+            lblUsername.Text = UserCache.LoginName;
+            lblPosition.Text = UserCache.Position;
+            lblEmail.Text = UserCache.Email;
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Are you sure to log out?", "Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
         }
     }
 }
