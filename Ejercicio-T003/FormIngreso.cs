@@ -54,5 +54,15 @@ namespace Ejercicio_T003
 
             MessageBox.Show(mensaje);
         }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtContrasenia.Text = "Password";
+            txtContrasenia.UseSystemPasswordChar = false;
+            txtUsuario.Text = "Username";
+            //lblErrorMessage.Visible = false;
+            this.Show();
+        }
+
     }
 }
